@@ -36,5 +36,10 @@ module LibraryApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Since the recording of video #4 the default configuration for CSRF protection
+    # in Rails has changed! To continue revert to the old defaults and to follow along
+    # with this course, the following line is added.
+    config.action_controller.allow_forgery_protection = false
   end
 end
