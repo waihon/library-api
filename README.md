@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Terminal Commands
+
+### 3. Creating a Rails Project
+
+* `rails new library-api --api`
+* `cd library-api`
+* `bundle install`
+* `bin/rails server`
