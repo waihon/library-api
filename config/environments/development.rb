@@ -8,11 +8,11 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
-  # Do not eager load code on boot.
-  config.eager_load = false
+  # Eager load code on boot.
+  config.eager_load = true
 
-  # Show full error reports.
-  config.consider_all_requests_local = true
+  # Instead of showing full error reports, send errors when using JSON API formatter
+  config.consider_all_requests_local = false
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.

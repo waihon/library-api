@@ -25,6 +25,10 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+# JSONAPI::Resources, or "JR", provides a framework for developing an API server that complies
+# with the JSON:API specification.
+gem 'jsonapi-resources'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
