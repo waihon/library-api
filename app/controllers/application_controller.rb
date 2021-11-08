@@ -1,2 +1,2 @@
-class ApplicationController < JSONAPI::ResourceController
+class ApplicationController < JSONAPI::ResourceControllerMetal
 end
