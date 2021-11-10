@@ -31,3 +31,8 @@ Things you may want to cover:
 * `cd library-api`
 * `bundle install`
 * `bin/rails server`
+
+### 7. Rails: JSON API Resource Basics
+
+* `bin/rails g migration CreateAuthors`
+* `bin/rails db:migrate`
