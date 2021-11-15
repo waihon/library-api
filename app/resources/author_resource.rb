@@ -6,7 +6,7 @@ class AuthorResource < JSONAPI::Resource
     case filter
     when :query
       # `value` is an array. We're interested in its first element.
-      records.where({ last: value.first })
+      records.where("last LIKE ?", "%#{value.first}%")
     else
       super
     end
