@@ -36,3 +36,7 @@ Things you may want to cover:
 
 * `bin/rails g migration CreateAuthors`
 * `bin/rails db:migrate`
+
+### 23. Ruby Author Filter
+
+* `bin/rails db:seed:replant`
