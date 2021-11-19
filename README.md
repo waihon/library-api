@@ -40,3 +40,10 @@ Things you may want to cover:
 ### 23. Ruby Author Filter
 
 * `bin/rails db:seed:replant`
+
+### 25 Rails Book Resource
+
+* `bin/rails g model book title:string isbn:string publish_date:date author:references`
+* `bin/rails g controller books`
+* `bin/rails g jsonapi:resource book`
+* `bin/rails db:migrate`
