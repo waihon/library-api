@@ -16,6 +16,7 @@ woolf = Author.create!(first: 'Virginia', last: 'Woolf')
 shakespeare = Author.create!(first: 'William', last: 'Shakespeare')
 poe = Author.create!(first: 'Edgar Allan', last: 'Poe')
 schatz = Author.create!(first: 'John', last: 'Schatz')
+clancy = Author.create!(first: 'Tom', last: 'Clancy')
 
 Book.create([
   {
@@ -59,5 +60,11 @@ Book.create([
     isbn: "978-0141439518",
     publish_date: "2002-12-31",
     author: austen
+  },
+  {
+    title: "Clear and Present Danger",
+    isbn: "0399134409",
+    publish_date: "1989-08-01",
+    author: clancy
   }
 ])
