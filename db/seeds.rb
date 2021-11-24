@@ -21,7 +21,7 @@ clancy = Author.create!(first: 'Tom', last: 'Clancy')
 Book.create([
   {
     title: "For Whom the Bell Tolls",
-    isbn: "978-0684803357",
+    isbn: "9780684803357",
     publish_date: "1995-07-01",
     author: hemingway
   },
@@ -33,31 +33,25 @@ Book.create([
   },
   {
     title: "The Dark Tower: The Gunslinger",
-    isbn: "978-0937986509",
+    isbn: "9780937986509",
     publish_date: "1998-01-01",
     author: king
   },
   {
     title: "The Green Mile",
-    isbn: "978-0671041786",
+    isbn: "9780671041786",
     publish_date: "1999-11-01",
     author: king
   },
   {
-    title: "Harry Potter and the Chamber of Secrets",
-    isbn: "0439064872",
-    publish_date: "2000-09-01",
-    author: rowling
-  },
-  {
     title: "The Adventures of Tom Sawyer",
-    isbn: "979-8749478112",
+    isbn: "9798749478112",
     publish_date: "2021-05-05",
     author: twain
   },
   {
     title: "Pride and Prejudice",
-    isbn: "978-0141439518",
+    isbn: "9780141439518",
     publish_date: "2002-12-31",
     author: austen
   },
@@ -66,5 +60,47 @@ Book.create([
     isbn: "0399134409",
     publish_date: "1989-08-01",
     author: clancy
+  },
+  {
+    title: "Harry Potter and the Philosopher's Stone",
+    isbn: "9780747532743",
+    publish_date: "1997-06-26",
+    author: rowling
+  },
+  {
+    title: "Harry Potter and the Chamber of Secrets",
+    isbn: "0747538492",
+    publish_date: "1998-07-02",
+    author: rowling
+  },
+  {
+    title: "Harry Porter and the Prisoner of Azkaban",
+    isbn: "0747542155",
+    publish_date: "1999-07-08",
+    author: rowling
+  },
+  {
+    title: "Harry Potter and the Goblet of Fire",
+    isbn: "074754624X",
+    publish_date: "2000-07-08",
+    author: rowling
+  },
+  {
+    title: "Harry Potter and the Order of the Phoenix",
+    isbn: "0747551006",
+    publish_date: "2003-06-27",
+    author: rowling
+  },
+  {
+    title: "Harry Potter and the Half-Blood Prince",
+    isbn: "0747581088",
+    publish_date: "2005-07-16",
+    author: rowling
+  },
+  {
+    title: "Harry Potter and the Deathly Hallows",
+    isbn: "0545010225",
+    publish_date: "2007-07-14",
+    author: rowling
   }
 ])
