@@ -47,3 +47,10 @@ Things you may want to cover:
 * `bin/rails g controller books`
 * `bin/rails g jsonapi:resource book`
 * `bin/rails db:migrate`
+
+### 34. Rails Reviews Resource
+
+* `bin/rails g model review user:string body:text book:references`
+* `bin/rails g controller reviews`
+* `bin/rails db:migrate`
+* `bin/rails g jsonapi:resource reviews`
