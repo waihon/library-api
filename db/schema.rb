@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_19_152629) do
+ActiveRecord::Schema.define(version: 2021_11_24_143412) do
 
   create_table "authors", force: :cascade do |t|
     t.string "first"
@@ -29,5 +29,15 @@ ActiveRecord::Schema.define(version: 2021_11_19_152629) do
     t.index ["author_id"], name: "index_books_on_author_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.string "user"
+    t.text "body"
+    t.integer "book_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_reviews_on_book_id"
+  end
+
   add_foreign_key "books", "authors"
+  add_foreign_key "reviews", "books"
 end
