@@ -4,6 +4,7 @@ class BookResource < JSONAPI::Resource
   attributes :title, :isbn, :publish_date
   # Please note JSONAPI::Resource uses has_one instead of belongs_to
   has_one :author
+  has_many :reviews
 
   filters :query
 
