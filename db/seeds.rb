@@ -18,7 +18,7 @@ poe = Author.create!(first: 'Edgar Allan', last: 'Poe')
 schatz = Author.create!(first: 'John', last: 'Schatz')
 clancy = Author.create!(first: 'Tom', last: 'Clancy')
 
-Book.create([
+Book.create!([
   {
     title: "For Whom the Bell Tolls",
     isbn: "9780684803357",
@@ -104,3 +104,7 @@ Book.create([
     author: rowling
   }
 ])
+
+book1 = Book.find_by(title: "For Whom the Bell Tolls")
+book1.reviews.create!(user: "jill", body: "A pivotal work in this author's life!")
+book1.reviews.create!(user: "rt", body: "I guess it's ok if you like darker stories.")
