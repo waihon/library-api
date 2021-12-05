@@ -1,0 +1,3 @@
+require 'jwt'
+
+JWT_SECRET = ENV["JWT_SECRET"] || "7f20b05ebd660615c8fc6328b574ef4892bfbf006465cbc213ce3eca1c32308b97deadaff8f7f6d886af2cd4d9ba2d86ba676d3bd1b25e9aeabac10c9fdda826"
