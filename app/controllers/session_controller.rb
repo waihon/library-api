@@ -3,10 +3,18 @@ class SessionController < ApplicationController
     email = params["email"]
     password = params["password"]
 
-    user = User.find_by!(email: email)
+    begin
+      user = User.find_by!(email: email)
 
-    # If the user is nil representing the email address is not found, the status
-    # 404 (Not Found) will be returned.
-    render json: { id: user.id, username: user.username, email: user.email }
+      render json: { id: user.id, username: user.username, email: user.email }
+    rescue => exception
+      render status: :unauthorized, json: {
+        errors: [
+          status: 401,
+          title: "Unauthorized",
+          detail: "Error logging in user with that email and password"
+        ]
+      }
+    end
   end
 end
