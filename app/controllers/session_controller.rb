@@ -21,6 +21,10 @@ class SessionController < ApplicationController
         render_unauthorized
       end
     rescue => exception
+      # Purposely slow down the response time to make it more difficult for attackers
+      # to differentiate between invalid password and invalid email
+      BCrypt::Password.create(password)
+
       render_unauthorized
     end
   end
