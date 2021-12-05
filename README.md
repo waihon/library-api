@@ -54,3 +54,9 @@ Things you may want to cover:
 * `bin/rails g controller reviews`
 * `bin/rails db:migrate`
 * `bin/rails g jsonapi:resource reviews`
+
+### 40. Storing Users Securely with BCrypt
+
+* `bundle install`
+* `bin/rails g model user email:string username:string password_digest:string`
+* `bin/rails db:migrate`
