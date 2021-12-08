@@ -11,6 +11,9 @@ class UsersController < ApplicationController
     # https://github.com/cerebris/jsonapi-resources/issues/1149#issuecomment-657913006
     json = resource_serializer.object_hash(user_resource, nil)
 
-    render json: json
+    # Unlike serialize_to_hash, object_hash doesn't add any data key.
+    # So, we'll have to manually add such key in order for the JSON response
+    # to be a valid JSON API document.
+    render json: { data: json }
   end
 end
