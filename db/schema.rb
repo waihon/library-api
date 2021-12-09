@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 2021_12_09_141533) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "user"
     t.text "body"
     t.integer "book_id", null: false
     t.datetime "created_at", precision: 6, null: false
