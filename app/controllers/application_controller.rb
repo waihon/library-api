@@ -23,4 +23,10 @@ class ApplicationController < ActionController::Base
       }
     end
   end
+
+  def context
+    # Pass info from controller down to resources that can be accessed
+    # via context[:current_user] for example.
+    { current_user: @current_user }
+  end
 end
