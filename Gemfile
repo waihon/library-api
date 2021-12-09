@@ -30,7 +30,7 @@ gem 'rack-cors'
 
 # JSONAPI::Resources, or "JR", provides a framework for developing an API server that complies
 # with the JSON:API specification.
-gem 'jsonapi-resources'
+gem 'jsonapi-resources', '~> 0.9.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
