@@ -1,10 +1,19 @@
 class BookResource < JSONAPI::Resource
   # We have to specify the attributes by hand as the jsonapi:resource generator
   # doesn't allow us to specify attributes.
-  attributes :title, :isbn, :publish_date
+  attributes :title, :isbn, :publish_date, :username
   # Please note JSONAPI::Resource uses has_one instead of belongs_to
   has_one :author
   has_many :reviews
+
+  def username
+    @model.user.username
+  end
+
+  def self.records(options = {})
+    # Eager load users
+    super.includes(:user)
+  end
 
   filters :query
 
