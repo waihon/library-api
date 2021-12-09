@@ -76,3 +76,16 @@ Things you may want to cover:
 #### Rails Console
 * `Author.update_all(user_id: 1)`
 * `Book.update_all(user_id: 1`)
+
+### 48. Adding Computed Attributes to APIs
+
+#### Terminal
+* `bin/rails g migration AddUserIdToReviews user:references`
+* `bin/rails db:migrate`
+* `bin/rails db:rollback`
+* `bin/rails db:migrate` (after editing the latest migration file)
+* `bundle install` (after updating Gemfile to use jsonapi-resources 0.9)
+
+#### Rails Console
+
+* `Review.update_all(user_id: 1)`
