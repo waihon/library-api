@@ -65,3 +65,14 @@ Things you may want to cover:
 
 * `bundle install` (after updating Gemfile)
 * `bin/rails secret` (to generate a secret string)
+
+### 47. Adding Authorization to Create APIs
+
+#### Terminal
+* `bin/rails g migration AddUserIdToAuthors user:references`
+* `bin/rails g migration AddUserIdToBooks user:references`
+* `bin/rails db:migrate`
+
+#### Rails Console
+* `Author.update_all(user_id: 1)`
+* `Book.update_all(user_id: 1`)
