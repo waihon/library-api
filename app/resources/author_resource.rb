@@ -3,6 +3,7 @@ class AuthorResource < JSONAPI::Resource
   has_many :books
 
   before_update :authorize_edit
+  before_remove :authorize_edit
 
   filters :query
 
