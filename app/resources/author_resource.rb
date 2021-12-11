@@ -2,7 +2,13 @@ class AuthorResource < JSONAPI::Resource
   attributes :first, :last, :username
   has_many :books
 
+  before_update :authorize_edit
+
   filters :query
+
+  def authorize_edit
+    raise ForbiddenError if @model.user_id != context[:current_user].id
+  end
 
   def username
     @model.user.username
