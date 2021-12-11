@@ -1,29 +1,8 @@
-class AuthorResource < JSONAPI::Resource
+class AuthorResource < BelongsToUserResource
   attributes :first, :last, :username
   has_many :books
 
-  before_update :authorize_edit
-  before_remove :authorize_edit
-
   filters :query
-
-  def authorize_edit
-    raise ForbiddenError if @model.user_id != context[:current_user].id
-  end
-
-  def username
-    @model.user.username
-  end
-
-  def self.records(options = {})
-    # Eager load users
-    super.includes(:user)
-  end
-
-  before_save do
-    # Auto set the user of a new record to the current logged in user
-    @model.user_id = context[:current_user].id if @model.new_record?
-  end
 
   def self.apply_filter(records, filter, value, options)
     case filter
