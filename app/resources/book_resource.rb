@@ -1,4 +1,4 @@
-class BookResource < JSONAPI::Resource
+class BookResource < BelongsToUserResource
   # We have to specify the attributes by hand as the jsonapi:resource generator
   # doesn't allow us to specify attributes.
   attributes :title, :isbn, :publish_date, :username
@@ -6,21 +6,7 @@ class BookResource < JSONAPI::Resource
   has_one :author
   has_many :reviews
 
-  def username
-    @model.user.username
-  end
-
-  def self.records(options = {})
-    # Eager load users
-    super.includes(:user)
-  end
-
   filters :query
-
-  before_save do
-    # Auto set the user of a new record to the current logged in user
-    @model.user_id = context[:current_user].id if @model.new_record?
-  end
 
   def self.apply_filter(records, filter, value, options)
     case filter
