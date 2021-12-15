@@ -89,3 +89,33 @@ Things you may want to cover:
 #### Rails Console
 
 * `Review.update_all(user_id: 1)`
+
+### 54 Deploying Rails with Heroku
+
+#### Terminal
+* `sqlite3 db/development.sqlite3 -csv -header 'SELECT * FROM users;' > db/users.csv`
+* `sqlite3 db/development.sqlite3 -csv -header 'SELECT * FROM authors;' > db/authors.csv`
+* `sqlite3 db/development.sqlite3 -csv -header 'SELECT * FROM books;' > db/books.csv`
+* `sqlite3 db/development.sqlite3 -csv -header 'SELECT * FROM reviews;' > db/reviews.csv`
+* `bin/rails db:create`
+* `bin/rails db:migrate`
+* `psql -d library-api -c "copy users from '$(pwd)/db/users.csv' CSV HEADER"`
+* `psql -d library-api -c "copy authors from '$(pwd)/db/authors.csv' CSV HEADER"`
+* `psql -d library-api -c "copy books from '$(pwd)/db/books.csv' CSV HEADER"`
+* `psql -d library-api -c "copy reviews from '$(pwd)/db/reviews.csv' CSV HEADER"`
+
+#### PostreSQL
+* `SELECT setval('users_id_seq', (SELECT MAX(id) FROM users));`
+* `SELECT setval('authors_id_seq', (SELECT MAX(id) FROM authors));`
+* `SELECT setval('books_id_seq', (SELECT MAX(id) FROM books));`
+* `SELECT setval('reviews_id_seq', (SELECT MAX(id) FROM reviews));`
+
+#### Heroku
+* `heroku create elibapi`
+* `git push heroku main`
+* `heroku config:set JWT_SECRET=$(rails secret)`
+* `heroku addons:create heroku-postgresql:hobby-dev`
+* `heroku pg:push library-api DATABASE_URL`
+* `heroku open`
+* `heroku pg:reset`
+* `heroku run "rails db:migrate"`
