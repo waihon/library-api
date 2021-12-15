@@ -3,7 +3,8 @@ class CreateReviews < ActiveRecord::Migration[6.1]
     create_table :reviews do |t|
       t.string :user
       t.text :body
-      t.references :book, null: false, foreign_key: true
+      # When a book is deleted, delete all associated reviews
+      t.references :book, null: false, foreign_key: { on_delete: :cascade }
 
       t.timestamps
     end
